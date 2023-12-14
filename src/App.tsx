@@ -1,5 +1,14 @@
 import '@govbr-ds/core/dist/core.min.css'
 import '@govbr-ds/webcomponents/dist/webcomponents.umd.min.js'
+import Breadcrumb from 'components/Breadcrumb/Breadcrumb'
+import Footer from 'components/Footer/Footer'
+import Header from 'components/Header/Header'
+import Menu from 'components/Menu/Menu'
+import CookiebarPage from 'pages/Cookiebar'
+import FormPage from 'pages/Form'
+import HomePage from 'pages/Home'
+import SignInPage from 'pages/Signin'
+import { Route, Routes } from 'react-router-dom'
 
 const App = () => {
   return (
