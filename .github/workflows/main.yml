@@ -37,4 +37,3 @@ jobs:
         SCRIPT_AFTER: |
           cd ${{secrets.TARGET}}
           sudo cp ./build/* /var/www/html
-          sudo rm -rf ./build
