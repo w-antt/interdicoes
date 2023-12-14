@@ -1,0 +1,40 @@
+name: Interdicoes
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+        - main
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+    -  uses: actions/checkout@v4
+
+    - name : Install Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20.x'
+
+    - name: Install npm dependencies
+      run: npm install
+    
+    - name: Run build task
+      run: npm run build --if-present
+    
+    - name: Deploy to Server
+      uses: easingthemes/ssh-deploy@main
+      env:
+        SSH_PRIVATE_KEY: ${{secrets.DEPLOY}}
+        ARGS: "-rlgoDzvc -i"
+        SOURCE: "./build"
+        REMOTE_HOST: ${{secrets.HOST}}
+        REMOTE_USER: ${{secrets.USER}}
+        TARGET: ${{secrets.TARGET}}
+        EXCLUDE: "/node_modules/, **.env,"
+        SCRIPT_AFTER: |
+          cd ${{secrets.TARGET}}
+          cp ./build/* /var/www/html
+          sudo rm -rf ./build

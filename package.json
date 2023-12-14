@@ -9,7 +9,7 @@
     "web components",
     "react"
   ],
-  "homepage": "https://govbr-ds.gitlab.io/wbc/quickstarts/govbr-ds-wbc-quickstart-react/",
+  "homepage": ".",
   "bugs": "https://gitlab.com/govbr-ds/wbc/quickstarts/govbr-ds-wbc-quickstart-react/-/issues",
   "repository": "gitlab:govbr-ds/wbc/quickstarts/govbr-ds-wbc-quickstart-react.git",
   "license": "MIT",
