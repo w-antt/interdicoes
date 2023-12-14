@@ -5,7 +5,7 @@ const HomePage = () => {
   const [markdownContent, setMarkdownContent] = useState('')
 
   useEffect(() => {
-    fetch('/wbc/quickstarts/govbr-ds-wbc-quickstart-react/README.md')
+    fetch('/README.md')
       .then((response) => response.text())
       .then((data) => setMarkdownContent(data))
       .catch((error) => console.error('Erro ao carregar o arquivo Markdown:', error))
